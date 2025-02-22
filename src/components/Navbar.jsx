@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FaLinkedin } from 'react-icons/fa'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,8 +18,11 @@ const Navbar = () => {
                 <a href="#project" className='hover:text-gray-400'>Projects</a>
                 <a href="#contact" className='hover:text-gray-400'>Contact</a>
             </div>
-            <button className='bg-gradient-to-r from-green-400 to-blue-500 text-white hidden md:inline
-            transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'>Connect Me</button>
+            <a href="https://www.linkedin.com/in/patrickbastosdeveloper" target="_blank" rel="noopener noreferrer" className='bg-gradient-to-r from-green-400 to-blue-500 text-white flex items-center space-x-2
+            transform transition-transform duration-300 hover:scale-105 px-3 py-1 rounded-full'>
+                <FaLinkedin className='w-4 h-4' />
+                <span className='text-sm'>Connect Me</span>
+            </a>
             <div className='md:hidden'>
                 <button onClick={toggleMenu} className='focus:outline-none border border-white p-1 rounded'>
                     <svg className='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
@@ -34,6 +38,9 @@ const Navbar = () => {
                 <a href="#service" className='block py-2 hover:text-gray-400'>Services</a>
                 <a href="#project" className='block py-2 hover:text-gray-400'>Projects</a>
                 <a href="#contact" className='block py-2 hover:text-gray-400'>Contact</a>
+                <a href="https://www.linkedin.com/in/patrickbastosdeveloper" target="_blank" rel="noopener noreferrer" className='block py-2 hover:text-gray-400'>
+                    <FaLinkedin className='inline-block text-white w-6 h-6' />
+                </a>
             </div>
         )}
     </nav>

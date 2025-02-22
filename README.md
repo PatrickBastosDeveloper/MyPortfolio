@@ -6,4 +6,5 @@ Esse projeto foi criado para agrupar os projetos que criei para mostrar e consol
 Vite
 React
 Javascript
+Tailwindcss
 

@@ -10,7 +10,8 @@ const About = () => {
           <img
             src={AboutImage}
             alt=""
-            className="w-72 h-80 rounded object-cover mb-8 md:mb-0 border-4 border-white"
+            className="w-72 h-80 rounded object-cover mb-8 md:mb-0 border-4 border-white transform 
+          transition-transform duration-300 hover:scale-105"
           />
           <div className="flex-1">
             <p className="text-lg mb-8">

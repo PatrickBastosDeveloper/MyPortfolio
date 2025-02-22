@@ -18,8 +18,8 @@ const Navbar = () => {
                 <a href="#project" className='hover:text-gray-400'>Projects</a>
                 <a href="#contact" className='hover:text-gray-400'>Contact</a>
             </div>
-            <a href="https://www.linkedin.com/in/patrickbastosdeveloper" target="_blank" rel="noopener noreferrer" className='bg-gradient-to-r from-green-400 to-blue-500 text-white flex items-center space-x-2
-            transform transition-transform duration-300 hover:scale-105 px-3 py-1 rounded-full'>
+            <a href="https://www.linkedin.com/in/patrickbastosdeveloper" target="_blank" rel="noopener noreferrer" className='bg-gradient-to-r from-green-50 to-blue-500 text-white flex items-center space-x-2
+            transform transition-transform duration-300 hover:scale-105 px-3 py-1 rounded-full' style={{ textShadow: '1px 1px 2px gray' }}>
                 <FaLinkedin className='w-4 h-4' />
                 <span className='text-sm'>Connect Me</span>
             </a>

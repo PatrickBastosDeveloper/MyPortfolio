@@ -8,7 +8,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='text-white px-8 md:px-16 lg:px-24 border border-white rounded-lg'>
+    <nav className='text-white px-8 md:px-16 lg:px-24 border border-white rounded-lg mt-4'>
         <div className='container py-2 flex justify-between items-center'>
             <div className='space-x-6 hidden md:flex'>
                 <a href="#home" className='hover:text-gray-400'>Home</a>

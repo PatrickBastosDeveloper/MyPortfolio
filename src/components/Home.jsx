@@ -21,11 +21,15 @@ const Home = () => {
               Software Engineer focused on continuous learning, building efficient, scalable, and well-structured systems.
         </p>
         <div className='mt-8 space-x-4'>
-            <button
-            className='bg-gradient-to-r from-green-400 to-blue-500 text-white
-            transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'>Contact With Me</button>
+            <a href="https://wa.me/qr/FIQXYDMTVPGJN1" target="_blank" rel="noopener noreferrer">
+                <button
+                className='bg-gradient-to-r from-green-50 to-blue-500 text-white
+                transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'
+                style={{ textShadow: '1px 1px 2px gray' }}>
+                    Contact With Me
+                </button>
+            </a>
         </div>
-
     </div>
   )
 }

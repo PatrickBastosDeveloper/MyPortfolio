@@ -38,9 +38,6 @@ const Navbar = () => {
                 <a href="#service" className='block py-2 hover:text-gray-400'>Services</a>
                 <a href="#project" className='block py-2 hover:text-gray-400'>Projects</a>
                 <a href="#contact" className='block py-2 hover:text-gray-400'>Contact</a>
-                <a href="https://www.linkedin.com/in/patrickbastosdeveloper" target="_blank" rel="noopener noreferrer" className='block py-2 hover:text-gray-400'>
-                    <FaLinkedin className='inline-block text-white w-6 h-6' />
-                </a>
             </div>
         )}
     </nav>

@@ -9,7 +9,7 @@ const Home = () => {
           autoPlay 
           loop 
           muted 
-          className='mx-auto mb-8 w-48 h-48 rounded-full object-cover transform 
+          className='mx-auto mb-20 w-68 h-64 rounded-full object-cover transform 
           transition-transform duration-300 hover:scale-105'
         />
         <h1 className='text-4xl font-bold'>

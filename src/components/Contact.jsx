@@ -22,7 +22,7 @@ const Contact = () => {
             </div>
             <div className='mb-4' style={{ color: '#0077b6ff' }}>
                 <FaMapMarkedAlt className='inline-block text-blue-400 mr-2'></FaMapMarkedAlt>
-                <span>street, city, pronice, country</span>
+                <span> Petrópolis/Rj, Brazil</span>
             </div>
           </div>
           <div className='flex-1 w-full'>
@@ -30,21 +30,21 @@ const Contact = () => {
                 <div>
                     <label htmlFor="name" className='block mb-2'>Your Name</label>
                     <input type="text" 
-                    className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none
+                    className='w-full p-2 rounded text-blue-400 border border-blue-700 focus:outline-none
                     focus:border-green-400'
                     placeholder='Enter Your Name'/>
                 </div>
                 <div>
                     <label htmlFor="email" className='block mb-2'>Email</label>
                     <input type="text" 
-                    className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none
+                    className='w-full p-2 rounded text-blue-400 border border-blue-700 focus:outline-none
                     focus:border-green-400'
                     placeholder='Enter Your Email'/>
                 </div>
                 <div>
                     <label htmlFor="message" className='block mb-2'>Message</label>
                     <textarea type="text" 
-                    className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none
+                    className='w-full p-2 rounded text-blue-400 border border-blue-700 focus:outline-none
                     focus:border-green-400'
                     rows="5"
                     placeholder='Enter Your Message'/>

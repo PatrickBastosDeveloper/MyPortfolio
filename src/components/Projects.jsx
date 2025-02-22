@@ -8,21 +8,21 @@ const projects = [
     name: "Employee MS",
     technologies: "MERN Stack",
     image: employeeMSImage,
-    github: "https://github.com/YouafKhan1",
+    github: "https://github.com/PatrickBastosDeveloper/",
   },
   {
     id: 2,
     name: "Blog App",
     technologies: "MERN Stack",
     image: bookMSImage,
-    github: "https://github.com/YouafKhan1",
+    github: "https://github.com/PatrickBastosDeveloper/",
   },
   {
     id: 3,
     name: "Book MS",
     technologies: "MERN Stack",
     image: employeeMSImage,
-    github: "https://github.com/YouafKhan1",
+    github: "https://github.com/PatrickBastosDeveloper/",
   },
 ];
 
@@ -33,15 +33,15 @@ const Projects = () => {
         <h2 className="text-4xl font-bold text-center mb-12">My Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div key={project.id} className=" p-6 rounded-lg hover:shadow-lg 
+            <div key={project.id} className="p-6 rounded-lg hover:shadow-lg 
             transform transition-transform duration-300 hover:scale-105">
               <img src={project.image} alt={project.name} className="rounded-lg mb-4 
               w-full h-38 object-cover" />
               <h3 className="text-2xl font-bold mb-2">{project.name}</h3>
               <p className="text-gray-400 mb-4">{project.technologies}</p>
               <a href={project.github} className="inline-block bg-gradient-to-r 
-              from-green-400 to-blue-500 text-white px-4 py-2 rounded-full" target="_blank" 
-              rel="noopener noreferrer">GitHub</a>
+              from-green-50 to-blue-500 text-white px-4 py-2 rounded-full" target="_blank" 
+              rel="noopener noreferrer" style={{ textShadow: '1px 1px 2px gray' }}>GitHub</a>
             </div>
           ))}
         </div>

@@ -7,7 +7,7 @@ import ActionProvider from '../helper/ActionProvider';
 
 const ChatbotComponent = () => {
   return (
-    <div className="chatbot-container">
+    <div className="chatbot-container max-w-4xl mx-auto">
       <Chatbot
         config={config}
         messageParser={MessageParser}

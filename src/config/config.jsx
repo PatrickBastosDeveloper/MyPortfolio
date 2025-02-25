@@ -2,7 +2,7 @@ import { createChatBotMessage } from 'react-chatbot-kit';
 
 const config = {
   botName: "Chatbot",
-  initialMessages: [createChatBotMessage(`Hi! I'm here to help you with questions about Patrick Bastos and his projects.`)],
+  initialMessages: [createChatBotMessage(`Hi, I'm a AI Chatbot Assistent! I'm here to help you with questions about Patrick Bastos and his projects.`)],
   customStyles: {
     botMessageBox: {
       backgroundColor: "#1F2937", // Tailwind color: bg-gray-800

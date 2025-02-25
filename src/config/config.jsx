@@ -5,19 +5,19 @@ const config = {
   initialMessages: [createChatBotMessage(`Hi! I'm here to help you with questions about Patrick Bastos and his projects.`)],
   customStyles: {
     botMessageBox: {
-      backgroundColor: "#376B7E",
-      color: "#FFFFFF", // Define a cor do texto do bot
+      backgroundColor: "#1F2937", // Tailwind color: bg-gray-800
+      color: "#FFFFFF", // Tailwind color: text-white
     },
     chatButton: {
-      backgroundColor: "#5ccc9d",
+      backgroundColor: "#10B981", // Tailwind color: bg-green-500
     },
     userMessageBox: {
-      backgroundColor: "#4A90E2",
-      color: "#FFFFFF", // Define a cor do texto do usuário
+      backgroundColor: "#3B82F6", // Tailwind color: bg-blue-500
+      color: "#FFFFFF", // Tailwind color: text-white
     },
     userInput: {
-      backgroundColor: "#333333", // Define a cor de fundo da caixa de entrada do usuário
-      color: "#FFFFFF", // Define a cor do texto da caixa de entrada do usuário
+      backgroundColor: "#1F2937", // Tailwind color: bg-gray-800
+      color: "#FFFFFF", // Tailwind color: text-white
     },
   },
 };

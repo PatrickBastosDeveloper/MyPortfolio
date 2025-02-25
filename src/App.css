@@ -12,19 +12,6 @@ body {
     font-style: normal;
 }
 
-.chatbot-message {
-    color: #FFFFFF !important; /* Força a cor do texto do chatbot */
-}
-
-.user-message {
-    color: #FFFFFF !important; /* Força a cor do texto do usuário */
-}
-
-.user-input {
-    background-color: #333333 !important; /* Força a cor de fundo da caixa de entrada do usuário */
-    color: #FFFFFF !important; /* Força a cor do texto da caixa de entrada do usuário */
-}
-
 .chatbot-container {
     display: flex;
     justify-content: center;

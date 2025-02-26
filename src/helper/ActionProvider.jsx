@@ -1,9 +1,11 @@
-import axios from 'axios';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
+    this.genAi = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
+    this.model = this.genAi.getGenerativeModel({ model: "gemini-1.5-flash" });
   }
 
   greet() {
@@ -16,25 +18,15 @@ class ActionProvider {
 
   async handleMessage(message) {
     try {
-      const response = await axios.post('https://api.openai.com/v1/engines/davinci-codex/completions', {
-        prompt: message,
-        max_tokens: 150,
-        temperature: 0.7,
-      }, {
-        headers: {
-          'Authorization': `Bearer AIzaSyAA1vL_JMDgNKp0_rmAg0NCxQtD4Uylt_s`
-        }
-      });
-
-      const result = response.data.choices[0].text.trim();
-      const botMessage = this.createChatBotMessage(result);
+      const result = await this.model.generateContent(message);
+      const botMessage = this.createChatBotMessage(result.response.text());
 
       this.setState((prev) => ({
         ...prev,
         messages: [...prev.messages, botMessage],
       }));
     } catch (error) {
-      console.error("Error fetching response from OpenAI:", error);
+      console.error("Error fetching response from Google Generative AI:", error);
       const errorMessage = this.createChatBotMessage("Sorry, I couldn't process your request. Please try again.");
       this.setState((prev) => ({
         ...prev,

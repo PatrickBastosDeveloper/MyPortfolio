@@ -11,8 +11,6 @@ class MessageParser {
     } else {
       this.actionProvider.handleMessage(message);
     }
-
-    // Adicione mais condições para lidar com diferentes tipos de mensagens
   }
 }
 

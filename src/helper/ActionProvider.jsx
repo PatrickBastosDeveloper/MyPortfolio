@@ -9,7 +9,7 @@ class ActionProvider {
   }
 
   greet() {
-    const message = this.createChatBotMessage("Hello! How can I assist you today?");
+    const message = this.createChatBotMessage("Hello! How can I assist you today? Suggestions: You can ask what are the main projects created by Patrick, main technologies used, etc. I also know some personal facts about him.");
     this.setState((prev) => ({
       ...prev,
       messages: [...prev.messages, message],
@@ -27,15 +27,13 @@ class ActionProvider {
       }));
     } catch (error) {
       console.error("Error fetching response from Google Generative AI:", error);
-      const errorMessage = this.createChatBotMessage("Sorry, I couldn't process your request. Please try again.");
+      const errorMessage = this.createChatBotMessage("Sorry, I couldn't process your request. Apparently I'm having some connection problem with the artificial interaction API. You can try again, if it doesn't work you can send a message to Patrick signaling that something is wrong. I'm sure he will solve it!😉");
       this.setState((prev) => ({
         ...prev,
         messages: [...prev.messages, errorMessage],
       }));
     }
   }
-
-  // Adicione mais ações para lidar com diferentes tipos de mensagens
 }
 
 export default ActionProvider;

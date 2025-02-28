@@ -1,13 +1,20 @@
 body {
-    background:linear-gradient(#0077b6ff,transparent); /* Define a cor de fundo como preto */
-    color: white; /* Define a cor do texto como branco */
+    background: linear-gradient(#0077b6ff, transparent); /* Define a cor de fundo */
+    color: white; /* Define a cor do texto */
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 @font-face {
-font-family: 'CoolveticaRg-Regular.woff';
-src: url('../src/assets/fonts/LaBelleAurore.woff') format('woff2');
-font-weight: normal;
-font-style: normal;
+    font-family: 'CoolveticaRg-Regular.woff';
+    src: url('../src/assets/fonts/LaBelleAurore.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.chatbot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.chatbot-container {
+    @apply flex justify-center items-center h-screen;
+}
+
+.react-chatbot-kit-chat-container {
+    @apply bg-gray-800 text-white;
+}
+
+.react-chatbot-kit-chat-input {
+    @apply bg-gray-800 text-white; /* Define a cor de fundo e a cor do texto da caixa de input */
+}

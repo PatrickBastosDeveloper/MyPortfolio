@@ -44,7 +44,7 @@ To view the final result, click the link or scan the QR code below:
     <img src="https://img.shields.io/badge/View-My%20Portfolio-blue" alt="View My Portfolio">
   </a>
   <br>
-  <img src="../MyPortfolio/src/assets/qrcode.png" alt="QR Code">
+  <img src="./src/assets/qrcode.png" alt="QR Code">
 </div>
 
 ## Deployment

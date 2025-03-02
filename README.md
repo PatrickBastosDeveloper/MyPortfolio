@@ -106,7 +106,7 @@ To fork and install this project, follow these steps:
 <a href="https://github.com/PatrickBastosDeveloper">
  <img style="border-radius: 50%;" src="https://avatars3.githubusercontent.com/patrickbastoscdeveloper" width="100px;" alt="author photo"/>
  <br />
- <sub><b>Patrick Bastos</b></sub></a> <a href="https://blog.rocketseat.com.br/author/thiago//" title="Rocketseat">🚀</a>
+ <sub><b>Patrick Bastos</b></sub></a> <a href="https://github.com/PatrickBastosDeveloper" title="my-portfolio">🚀</a>
 
 Made by Patrick Bastos
 👋🏽 Get in touch!

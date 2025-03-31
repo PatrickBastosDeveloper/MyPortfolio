@@ -1,6 +1,6 @@
 import React from "react";
 import AboutImage from "../assets/aboutme-image.png";
-import resumePDF from "../assets/resume.pdf"; // Certifique-se de que o caminho está correto
+import resumePDF from "../assets/resume.pdf";
 
 const About = () => {
   return (

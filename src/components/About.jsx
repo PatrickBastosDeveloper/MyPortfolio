@@ -1,6 +1,7 @@
 import React from "react";
 import AboutImage from "../assets/aboutme-image.png";
-import resumePDF from "../assets/resume.pdf";
+import resumePDF from "../assets/CurriculoPT-BR.pdf";
+import resumePDFEN from "../assets/ResumeEN-US.pdf";
 
 const About = () => {
   return (
@@ -19,8 +20,8 @@ const About = () => {
               I am a back-end software developer with experience in C# and .NET, specializing in building scalable and efficient solutions.<br /> <br />
               Holding a postgraduate degree in Systems Development, I have a strong focus on performance, security, and best coding practices.<br /><br />
               I am driven by challenges and always seeking new technologies and continuous improvement to deliver robust and high-impact solutions.<br /><br />
-              🚀 Main technologies: C#, .NET, REST APIs, SQL Server, Azure, Microservices Architecture.<br />
-              📌 Interests: Software Engineering, System Performance, Cloud Computing, DevOps.
+              🚀 Main technologies: C#, .NET, REST APIs, SQL, NoSQL, Azure, Docker, Microservices Architecture, Kafka, Rabbit, etc.<br />
+              📌 Interests: Software Engineering, System Performance, Tech IA.
             </p>
             <div className="mt-12 flex flex-col md:flex-row items-center text-center md:text-left">
               <div className="md:mr-12 flex flex-col items-center md:items-start">
@@ -33,22 +34,44 @@ const About = () => {
             </div>
             <div className="mt-12 flex flex-col items-center md:items-start" style={{ marginLeft: "0%" }}>
               <h3 className="text-2xl font-bold mb-4">Download My Resume</h3>
-              <div className="flex space-x-4">
-                <a
-                  href={resumePDF}
-                  download="Patrick_Bastos_Resume.pdf"
-                  className="bg-green-400 text-white px-4 py-2 rounded hover:bg-green-500"
-                >
-                  Download
-                </a>
-                <a
-                  href={resumePDF}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-500"
-                >
-                  Open in New Tab
-                </a>
+              <div className="flex flex-col space-y-4">
+                {/* Botões em EN-US */}
+                <div className="flex flex-row items-center md:items-start space-x-4">
+                  <a
+                    href={resumePDFEN}
+                    download="Patrick_Bastos_Resume.pdf"
+                    className="bg-green-400 text-white px-4 py-2 rounded hover:bg-green-500"
+                  >
+                    Download EN-US
+                  </a>
+                  <a
+                    href={resumePDFEN}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-500"
+                  >
+                    Open in New Tab
+                  </a>
+                </div>
+
+                {/* Botões em PT-BR */}
+                <div className="flex flex-row items-center md:items-start space-x-4">
+                  <a
+                    href={resumePDF}
+                    download="Patrick_Bastos_Curriculo.pdf"
+                    className="bg-green-400 text-white px-4 py-2 rounded hover:bg-green-500"
+                  >
+                    Download PT-BR
+                  </a>
+                  <a
+                    href={resumePDF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-400 text-white px-4 py-2 rounded hover:bg-blue-500"
+                  >
+                    Open in New Tab
+                  </a>
+                </div>
               </div>
             </div>
           </div>

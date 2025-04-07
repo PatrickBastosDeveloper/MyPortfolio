@@ -40,7 +40,7 @@ This project was created to showcase the projects I have developed and to consol
 To view the final result, click the link or scan the QR code below:
 
 <div align="center">
-  <a href="https://portfolio-patrick-bastos.netlify.app/">
+  <a href="https://portfolio-patrick-bastos.netlify.app/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/View-My%20Portfolio-blue" alt="View My Portfolio">
   </a>
   <br>

@@ -5,7 +5,7 @@ class ActionProvider {
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
     this.genAi = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
-    this.model = this.genAi.getGenerativeModel({ model: "gemini-1.5-flash" });
+    this.model = this.genAi.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
   }
 
   getInitialPrompt() {

@@ -1,4 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { PATRICK_PROFILE, queryPatrickProfile } from "../data/patrickProfile.js";
 
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
@@ -6,49 +7,77 @@ class ActionProvider {
     this.setState = setStateFunc;
     this.genAi = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
     this.model = this.genAi.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
+    this.lastTopic = "general";
   }
 
   getInitialPrompt() {
-    return `You are an AI assistant created to help users with information about Patrick Bastos and his projects.
-  
-            Patrick Bastos is a skilled software developer with experience in C#, .NET, and JavaScript. \
-            He has worked on several projects, including a spending solution for VIP lounges, marketing campaigns, and a benefit center.
-            
-            Your main goal is to provide accurate and helpful information about Patrick's work, technologies he uses, and his achievements.
-            
-            If you don't know the answer to a question, it's okay to say that you don't know. Avoid making assumptions or providing personal opinions.
-            
-            Always ensure your responses are polite, concise, informative and a little relaxed.`;
+    return `You are an AI assistant created to help users with information about Patrick Bastos.
+
+Use only the following structured profile data as your source of truth:
+${JSON.stringify(PATRICK_PROFILE, null, 2)}
+
+Rules:
+- Answer flexibly and naturally in Portuguese or English depending on the user's message.
+- When the user asks a follow-up like "tell me more", "fale mais", "e a carreira?", or "e a vida pessoal?", continue from the last topic discussed.
+- If the answer can be derived from the profile data, do not invent details.
+- If the question is vague, provide a short helpful overview and offer to elaborate on personal life, career, or projects.
+- Keep responses concise, informative, and human.`;
+  }
+
+  getTopicContext() {
+    if (this.lastTopic === "personal") {
+      return "Focus on personal life: family, hobbies, interests, and lifestyle.";
+    }
+
+    if (this.lastTopic === "career") {
+      return "Focus on career: administration background, accounting offices, HR, fiscal, accounting, payroll, auditing, and migration to tech in 2022.";
+    }
+
+    if (this.lastTopic === "projects") {
+      return "Focus on projects and technical work.";
+    }
+
+    return "Provide a short general overview of Patrick Bastos.";
   }
 
   async handleMessage(message) {
     try {
-      const prompt = `${this.getInitialPrompt()}\n\nUser: ${message}\nAI:`;
-  
+      const fallback = queryPatrickProfile(message, this.lastTopic);
+
+      if (fallback) {
+        const botMessage = this.createChatBotMessage(fallback);
+        this.setState((prev) => ({
+          ...prev,
+          messages: [...prev.messages, botMessage],
+        }));
+        return;
+      }
+
+      const prompt = `${this.getInitialPrompt()}\n\n${this.getTopicContext()}\n\nUser: ${message}\nAI:`;
       const result = await this.model.generateContent({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       });
-  
+
       const botResponse =
         result?.response?.candidates?.[0]?.content?.parts?.[0]?.text ||
         "Sorry, I'm not sure how to respond to that.";
-  
+
       const botMessage = this.createChatBotMessage(botResponse);
-  
+
       this.setState((prev) => ({
         ...prev,
         messages: [...prev.messages, botMessage],
       }));
     } catch (error) {
       console.error("Error fetching response from Google Generative AI:", error);
-  
+
+      const fallback = queryPatrickProfile(message, this.lastTopic);
+
       const errorMessage = this.createChatBotMessage(
-        "Sorry, I couldn't process your request. \
-         Apparently I'm having some connection problem with the artificial interaction API. \
-         You can try again, if it doesn't work you can send a message to Patrick signaling that something is wrong. \
-         I'm sure he will solve it!😉"
+        fallback ||
+          "Sorry, I couldn't process your request. Please try again."
       );
-  
+
       this.setState((prev) => ({
         ...prev,
         messages: [...prev.messages, errorMessage],
@@ -65,14 +94,8 @@ class ActionProvider {
   }
 
   provideProjectInfo(projectName = "") {
-    let messageText = "Patrick has worked on several projects including a spending solution for VIP lounges, marketing campaigns, and a benefit center.";
-
-    if (projectName.toLowerCase().includes("spending")) {
-      messageText = "Patrick developed a spending solution for VIP lounges, saving R$ 24MM and reducing incidents by 60%.";
-    } else if (projectName.toLowerCase().includes("black friday")) {
-      messageText = "Patrick developed 14 Black Friday campaigns, optimizing customer engagement.";
-    }
-
+    this.lastTopic = "projects";
+    const messageText = queryPatrickProfile(projectName || "projects", "projects");
     const message = this.createChatBotMessage(messageText);
     this.setState((prev) => ({
       ...prev,
@@ -81,14 +104,8 @@ class ActionProvider {
   }
 
   provideTechInfo(tech = "") {
-    let messageText = "Patrick is proficient in C#, .NET, React, JavaScript, and cloud solutions.";
-
-    if (tech.toLowerCase().includes("c#") || tech.toLowerCase().includes(".net")) {
-      messageText = "Patrick has expertise in C# and .NET, including backend development and API integrations.";
-    } else if (tech.toLowerCase().includes("react")) {
-      messageText = "Patrick is skilled in React, developing user-friendly and high-performance applications.";
-    }
-
+    this.lastTopic = "career";
+    const messageText = queryPatrickProfile(tech || "technology", "career");
     const message = this.createChatBotMessage(messageText);
     this.setState((prev) => ({
       ...prev,
@@ -97,15 +114,8 @@ class ActionProvider {
   }
 
   providePersonalInfo(personal = "") {
-    let messageText = "Patrick is married, 39 years old in 2025, and is the father of a beautiful boy named Oliver. \
-    He likes to practice physical activities such as running and swimming. Loves (really loves!!) special coffees.";
-
-    if (personal.toLowerCase().includes("what he like") || personal.toLowerCase().includes("to do")) {
-      messageText = "He likes to practice physical activities such as running and swimming. Loves (really loves!!) special coffees.";
-    } else if (personal.toLowerCase().includes("hobbies") || personal.toLowerCase().includes("interests")) {
-      messageText = "He likes to practice physical activities such as running and swimming.";
-    }
-
+    this.lastTopic = "personal";
+    const messageText = queryPatrickProfile(personal || "personal", "personal");
     const message = this.createChatBotMessage(messageText);
     this.setState((prev) => ({
       ...prev,

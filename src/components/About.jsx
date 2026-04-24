@@ -17,7 +17,7 @@ const About = () => {
           />
           <div className="flex-1">
             <p className="text-lg mb-8">
-              I am a back-end software developer with experience in C# and .NET, specializing in building scalable and efficient solutions.<br /> <br />
+              I am a back-end software developer with 3+ years of experience in C# and .NET, specializing in building scalable and efficient solutions.<br /> <br />
               Holding a postgraduate degree in Systems Development, I have a strong focus on performance, security, and best coding practices.<br /><br />
               I am driven by challenges and always seeking new technologies and continuous improvement to deliver robust and high-impact solutions.<br /><br />
               🚀 Main technologies: C#, .NET, REST APIs, SQL, NoSQL, Azure, Docker, Microservices Architecture, Kafka, Rabbit, etc.<br />

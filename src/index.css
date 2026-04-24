@@ -6,10 +6,37 @@
     @apply flex justify-center items-center h-screen;
 }
 
+.chatbot-expand {
+    display: flex;
+    justify-content: center;
+}
+
 .react-chatbot-kit-chat-container {
-    @apply bg-gray-800 text-white;
+    @apply bg-gray-800 text-white !w-full;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+}
+
+.react-chatbot-kit-chat-inner-container {
+    @apply !w-full;
+}
+
+.react-chatbot-kit-chat-message-container {
+    @apply !w-full;
+}
+
+.react-chatbot-kit-chat-chat-container {
+    @apply !w-full;
 }
 
 .react-chatbot-kit-chat-input {
-    @apply bg-gray-800 text-white; /* Define a cor de fundo e a cor do texto da caixa de input */
+    @apply bg-gray-800 text-white w-full; /* Define a cor de fundo e a cor do texto da caixa de input */
+}
+
+.react-chatbot-kit-chat-input-form {
+    @apply !w-full;
+}
+
+.react-chatbot-kit-chat-header {
+    display: none !important;
 }

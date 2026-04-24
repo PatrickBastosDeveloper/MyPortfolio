@@ -4,14 +4,14 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const Home = () => {
   return (
-    <div className='flex items-center justify-center h-screen text-white text-center py-16'>
-        <div className='flex flex-col items-center'>
+    <div className='flex items-center justify-center min-h-screen text-white text-center py-16'>
+        <div className='flex flex-col items-center px-4 md:px-0'>
             <video 
               src={HomeImage} 
               autoPlay 
               loop 
               muted 
-              className='mx-auto mb-20 w-68 h-64 rounded-full object-cover transform 
+              className='mx-auto mb-16 md:mb-20 w-68 h-64 rounded-full object-cover transform 
               transition-transform duration-300 hover:scale-105'
             />
             <h1 className='text-4xl font-bold'>
@@ -19,7 +19,7 @@ const Home = () => {
                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-green-50 to-blue-400'>Patrick Bastos</span>
                 , Back-End Developer
             </h1>
-            <p className='mt-4 text-lg text-gray-300'>
+            <p className='mt-4 text-lg text-gray-300 max-w-xl'>
                   Software Engineer with 3+ years of experience focused on continuous learning, building efficient, scalable, and well-structured systems.
             </p>
             <div className='mt-8 space-x-4'>

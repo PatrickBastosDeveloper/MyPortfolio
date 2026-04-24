@@ -20,7 +20,7 @@ const Home = () => {
                 , Back-End Developer
             </h1>
             <p className='mt-4 text-lg text-gray-300'>
-                  Software Engineer focused on continuous learning, building efficient, scalable, and well-structured systems.
+                  Software Engineer with 2+ years of experience focused on continuous learning, building efficient, scalable, and well-structured systems.
             </p>
             <div className='mt-8 space-x-4'>
                 <a href="https://wa.me/qr/FIQXYDMTVPGJN1" target="_blank" rel="noopener noreferrer">

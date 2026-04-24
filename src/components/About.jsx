@@ -27,7 +27,7 @@ const About = () => {
               <div className="md:mr-12 flex flex-col items-center md:items-start">
                 <h3 className="text-2xl font-bold text-transparent bg-clip-text 
                 bg-gradient-to-r from-green-50 to-blue-400">
-                  2+
+                  3+
                 </h3>
                 <p>Years Experience</p>
               </div>

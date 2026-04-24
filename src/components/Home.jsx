@@ -11,6 +11,7 @@ const Home = () => {
               autoPlay 
               loop 
               muted 
+              playsInline
               className='mx-auto mb-16 md:mb-20 w-68 h-64 rounded-full object-cover transform 
               transition-transform duration-300 hover:scale-105'
             />
